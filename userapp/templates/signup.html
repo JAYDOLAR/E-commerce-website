@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <img src="{% static 'image/logo.jpg' %}" height="140px" width="300px" alt="Company Logo">
+    <div class="center">
+        <h1>Signup</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" name="name" id="name" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" id="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="number" name="number" id="number" required>
+                <span></span>
+                <label>Number</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" id="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="submit" value="Signup">
+            <div class="signup_link">
+                Alredy Have An Account <a href="{% url 'login' %}">Login</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

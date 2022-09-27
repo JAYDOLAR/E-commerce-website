@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <img src="{% static 'image/logo.jpg' %}" height="140px" width="300px"alt="Company Logo">
+    <div class="center">
+    <div class="center">
+        <h1>Login</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" name="email" id="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input  type="password" name="password" id="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="submit" value="Login">
+            <div class="signup_link">
+                Not a member? <a href="{% url 'signup' %}">Signup</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
